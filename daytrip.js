@@ -7,24 +7,33 @@ let destination = ["Grand Rapids", "Muskegon", "Holland", "Ann Arbor", "Detroit"
 //(5 points): As a user, I want a restaurant to be randomly selected for my day trip.
 
 let restaurantGrandRapids = ["Donkey Taqueria", "Hancock", "The Winchester", "Butcher's Union", "Stella's"];
-let restaurantMuskegon = ["794 Kitchen & Bar", "Hearth"];
-let restaurantHolland = ["The Curragh Irish Pub"];
-let restaurantAnnArbor = ["Spencer"];
-let RestaurantDetroit = ["Selden Standard"];
+
+let restaurantMuskegon = ["794 Kitchen & Bar", "Hearthstone Bistro", "The Station Grill", "isabella's", "Lakeside Cafe"];
+
+let restaurantHolland = ["The Curragh Irish Pub", "Butch's Dry Dock", "Seventy-Six", "Boatwerks Waterfront Restaurant", "Fricano's Too"];
+
+let restaurantAnnArbor = ["Spencer", "Sava's", "Zingerman's Roadhouse", "Black Pearl", "Side Biscuit"];
+
+let RestaurantDetroit = ["Selden Standard", "Grey Ghost Detroit", "Marrow", "Midnight Temple", "The Whitney"];
 
 //(5 points): As a user, I want a mode of transportation to be randomly selected for my day trip.
 
-let transportation = ["Uber", "Lyft", "Taxi", "Bicycle", "Your sober friend as a DD", "Scooter"];
+let transportation = ["Uber/Lyft", "Walk", "Taxi", "Bicycle", "Your sober friend as a DD", "Scooter"];
 
 //(5 points): As a user, I want a form of entertainment to be randomly selected for my day trip.
 
-let entertainmentGrandRapids = ["Speciation Artisan Ales", "City Built Brewing Company", "Brewery Vivant", "Grand Rapids Brewing Company", "Arvon Brewing Company"];
-let entertainmentMuskegon = ["Rake Beer Project", "Pigeon Hill"];
-let entertainmentHolland = ["New Holland Brewind", "Our Brewing Company" ];
-let entertainmentAnnArbor = ["HOMES", ""];
-let entertainmentDetroit = ["Batch Brewing Company", ""];
+let entertainmentGrandRapids = ["Speciation Artisan Ales", "City Built Brewing Company", "Brewery Vivant", "The Mitten Brewing Company", "Arvon Brewing Company"];
+
+let entertainmentMuskegon = ["Rake Beer Project", "Pigeon Hill Brewing Co.", "Unruly Brewing Company", "18th Amendment Spirits Co.", "Lively Up Kombucha"];
+
+let entertainmentHolland = ["New Holland Brewing", "Our Brewing Company", "Big Lake Brewing", "Guardian Brewing Company", "Brewery 4 Two 4"];
+
+let entertainmentAnnArbor = ["HOMES Brewery", "Wolverine State Brewing Co.", "Blom Meadworks", "Jolly Pumpkin Cafe & Brewery", "Grizzly Peak Brewing Co."];
+
+let entertainmentDetroit = ["Batch Brewing Company", "Motor City Brewing Works", "Atwater Brewery & Tap House", "Eastern Market Brewing Co.", "Brew Detroit"];
 //(15 points): As a user, I want to be able to randomly re-select a destination, restaurant, mode of transportation, and/or form of entertainment if I don’t like one or more of those things.
-let categorySelectorArray = ["", "", "", ""]
+
+let tripPicks = ["", "", "", ""]
 
 function randomlySelectStringFromTripCategory(tripCategory){
     let random = Math.floor(Math.random() * tripCategory.length);
@@ -32,22 +41,42 @@ function randomlySelectStringFromTripCategory(tripCategory){
     return tripCategory[random];
 } 
 
-let choice = randomlySelectStringFromTripCategory(destination);
+let choiceOne = randomlySelectStringFromTripCategory(destination);
+
+let userInputDestination = confirm("Is the Destination ok?");
+
+if (randomlySelectStringFromTripCategory(destination) == destination[0](
+
+)
+
+
+     tripPicks[0] = destination[0];  
+
+
+let choiceTwo = randomlySelectStringFromTripCategory(restaurant);
+let userInputRestaurant = confirm("Does this Restaurant look ok?");
+
+let choiceThree = randomlySelectStringFromTripCategory(transportation);
+let userInputTransportation = confirm("Is this mode of Transportation ok?");
+
+
+let choiceFour = randomlySelectStringFromTripCategory(entertainmentGrandRapids);
+let userInputEntertainment = confirm("Do you want to go to this Brewery");
 
 //(10 points): As a user, I want to be able to confirm that my day trip is “complete” once I like all of the random selections.
 //(10 points): As a user, I want to display my completed trip in the console.
 //(5 points): As a developer, I want all of my functions to have a Single Responsibility. Remember, each function should do just one thing!
 
 randomlySelectStringFromTripCategory(destination);
-    categorySelectorArray.push(choice == 0);
+    tripPicks[0] = choiceOne;
 
     
 randomlySelectStringFromTripCategory(restaurantGrandRapids);
-    console.log(choice);
+    tripPicks[1] = choiceTwo;
 
 randomlySelectStringFromTripCategory(transportation);
-    console.log(choice);
+    tripPicks[2] = choiceThree;
 
 
 randomlySelectStringFromTripCategory(entertainmentGrandRapids);
-    console.log(choice);
+    tripPicks[3] = choiceFour;
