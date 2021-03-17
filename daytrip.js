@@ -18,7 +18,7 @@ let restaurantGrandRapids = ["Donkey Taqueria", "Hancock", "The Winchester", "Bu
 
 //(5 points): As a user, I want a mode of transportation to be randomly selected for my day trip.
 
-let transportation = ["Uber/Lyft", "Walk", "Taxi", "Bicycle", "Your sober friend as a DD", "Scooter"];
+let transportation = ["Uber/Lyft", "Walking", "Taxi", "Bicycle", "your sober friend as a DD", "Scooter"];
 
 //(5 points): As a user, I want a form of entertainment to be randomly selected for my day trip.
 
@@ -99,13 +99,13 @@ while (choice == false){
         case "5":
             choice = true;
             console.log("Congratulations, Here is the trip you selected!");
+            break;
         default:
             alert("Invalid Entry, Try again.");
     }
 }
-//let choice = true;
 
-console.log(tripPicks);
+console.log("You will be going to " + tripPicks[0] + ", your mode of travel will be " + tripPicks[2] + ". " + "You will be dining at " + tripPicks[1] + " followed by entertainment at " + tripPicks[3] + "." );
 
 // if (randomlySelectStringFromTripCategory(destination) = destination[0]){
 // let userInputDestination = confirm("Is the Destination ok?");
