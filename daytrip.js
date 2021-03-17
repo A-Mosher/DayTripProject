@@ -88,13 +88,13 @@ while (choice == false){
             tripPicks[0] = randomlySelectStringFromTripCategory(destination);
             break;
         case "2":
-            tripPicks[1] = randomlySelectStringFromTripCategory(entertainment);
+            tripPicks[1] = randomlySelectStringFromTripCategory(restaurantGrandRapids);
             break;
         case "3":
             tripPicks[2] = randomlySelectStringFromTripCategory(transportation);
             break;
         case "4":
-            tripPicks[3] = randomlySelectStringFromTripCategory(entertainment);
+            tripPicks[3] = randomlySelectStringFromTripCategory(entertainmentGrandRapids);
             break;
         case "5":
             choice = true;
