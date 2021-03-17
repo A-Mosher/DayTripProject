@@ -39,44 +39,76 @@ function randomlySelectStringFromTripCategory(tripCategory){
     let random = Math.floor(Math.random() * tripCategory.length);
     console.log(random, tripCategory[random]);
     return tripCategory[random];
-} 
+}
 
 let choiceOne = randomlySelectStringFromTripCategory(destination);
 
-let userInputDestination = confirm("Is the Destination ok?");
+let choiceTwo = randomlySelectStringFromTripCategory
 
-if (randomlySelectStringFromTripCategory(destination) == destination[0](
+let choice = false;
+while (choice = false){
+    let userInput = prompt("Enter 1 to reselect destination. Enter 2 to reselect restaurant. Enter 3 to reselect mode of transportation. Enter 4 to reselect entertainment. Enter 5 if you would like to book this trip.");
+    switch (userInput){
+        case "1":
+            randomlySelectStringFromTripCategory(destination);
+            break;
+        case "2":
+            randomlySelectStringFromTripCategory(entertainment);
+            break;
+        case "3":
+            randomlySelectStringFromTripCategory(transportation);
+            break;
+        case "4":
+            randomlySelectStringFromTripCategory(entertainment);
+            break;
+        case "5":
+            choice = true;
+            console.log("Congratulations, Here is the trip you selected" + tripPicks)
+        default:
+            alert("Invalid Entry, Try again.");
 
-)
+}
+
+// if (randomlySelectStringFromTripCategory(destination) = destination[0]){
+// let userInputDestination = confirm("Is the Destination ok?");
+//      userInputDestination === true;
+//     tripPicks[0] = destination[0];
+// }
+// else if (userInputDestination === false){
+//         randomlySelectStringFromTripCategory(destination) == destination[1];
+//         userInputDestination;
+//     }
+// else if (userInputDestination === true)
+//         tripPics[0] = destination[1];
+//         if (userInputDestination === false)
+//         userInputDestination;
+                     
 
 
-     tripPicks[0] = destination[0];  
+// let choiceTwo = randomlySelectStringFromTripCategory(restaurant);
+// let userInputRestaurant = confirm("Does this Restaurant look ok?");
+
+// let choiceThree = randomlySelectStringFromTripCategory(transportation);
+// let userInputTransportation = confirm("Is this mode of Transportation ok?");
 
 
-let choiceTwo = randomlySelectStringFromTripCategory(restaurant);
-let userInputRestaurant = confirm("Does this Restaurant look ok?");
+// let choiceFour = randomlySelectStringFromTripCategory(entertainmentGrandRapids);
+// let userInputEntertainment = confirm("Do you want to go to this Brewery");
 
-let choiceThree = randomlySelectStringFromTripCategory(transportation);
-let userInputTransportation = confirm("Is this mode of Transportation ok?");
+// //(10 points): As a user, I want to be able to confirm that my day trip is “complete” once I like all of the random selections.
+// //(10 points): As a user, I want to display my completed trip in the console.
+// //(5 points): As a developer, I want all of my functions to have a Single Responsibility. Remember, each function should do just one thing!
 
-
-let choiceFour = randomlySelectStringFromTripCategory(entertainmentGrandRapids);
-let userInputEntertainment = confirm("Do you want to go to this Brewery");
-
-//(10 points): As a user, I want to be able to confirm that my day trip is “complete” once I like all of the random selections.
-//(10 points): As a user, I want to display my completed trip in the console.
-//(5 points): As a developer, I want all of my functions to have a Single Responsibility. Remember, each function should do just one thing!
-
-randomlySelectStringFromTripCategory(destination);
-    tripPicks[0] = choiceOne;
+// randomlySelectStringFromTripCategory(destination);
+//     tripPicks[0] = choiceOne;
 
     
-randomlySelectStringFromTripCategory(restaurantGrandRapids);
-    tripPicks[1] = choiceTwo;
+// randomlySelectStringFromTripCategory(restaurantGrandRapids);
+//     tripPicks[1] = choiceTwo;
 
-randomlySelectStringFromTripCategory(transportation);
-    tripPicks[2] = choiceThree;
+// randomlySelectStringFromTripCategory(transportation);
+//     tripPicks[2] = choiceThree;
 
 
-randomlySelectStringFromTripCategory(entertainmentGrandRapids);
-    tripPicks[3] = choiceFour;
+// randomlySelectStringFromTripCategory(entertainmentGrandRapids);
+//     tripPicks[3] = choiceFour;
