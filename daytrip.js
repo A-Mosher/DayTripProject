@@ -98,7 +98,7 @@ while (choice == false){
             break;
         case "5":
             choice = true;
-            console.log("Congratulations, Here is the trip you selected!");
+            console.log("Congratulations, here is the trip you selected!");
             break;
         default:
             alert("Invalid Entry, Try again.");
