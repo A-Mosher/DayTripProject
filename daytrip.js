@@ -8,13 +8,13 @@ let destination = ["Grand Rapids", "Muskegon", "Holland", "Ann Arbor", "Detroit"
 
 let restaurantGrandRapids = ["Donkey Taqueria", "Hancock", "The Winchester", "Butcher's Union", "Stella's"];
 
-let restaurantMuskegon = ["794 Kitchen & Bar", "Hearthstone Bistro", "The Station Grill", "isabella's", "Lakeside Cafe"];
+//let restaurantMuskegon = ["794 Kitchen & Bar", "Hearthstone Bistro", "The Station Grill", "isabella's", "Lakeside Cafe"];
 
-let restaurantHolland = ["The Curragh Irish Pub", "Butch's Dry Dock", "Seventy-Six", "Boatwerks Waterfront Restaurant", "Fricano's Too"];
+//let restaurantHolland = ["The Curragh Irish Pub", "Butch's Dry Dock", "Seventy-Six", "Boatwerks Waterfront Restaurant", "Fricano's Too"];
 
-let restaurantAnnArbor = ["Spencer", "Sava's", "Zingerman's Roadhouse", "Black Pearl", "Side Biscuit"];
+//let restaurantAnnArbor = ["Spencer", "Sava's", "Zingerman's Roadhouse", "Black Pearl", "Side Biscuit"];
 
-let RestaurantDetroit = ["Selden Standard", "Grey Ghost Detroit", "Marrow", "Midnight Temple", "The Whitney"];
+//let RestaurantDetroit = ["Selden Standard", "Grey Ghost Detroit", "Marrow", "Midnight Temple", "The Whitney"];
 
 //(5 points): As a user, I want a mode of transportation to be randomly selected for my day trip.
 
@@ -24,16 +24,16 @@ let transportation = ["Uber/Lyft", "Walk", "Taxi", "Bicycle", "Your sober friend
 
 let entertainmentGrandRapids = ["Speciation Artisan Ales", "City Built Brewing Company", "Brewery Vivant", "The Mitten Brewing Company", "Arvon Brewing Company"];
 
-let entertainmentMuskegon = ["Rake Beer Project", "Pigeon Hill Brewing Co.", "Unruly Brewing Company", "18th Amendment Spirits Co.", "Lively Up Kombucha"];
+//let entertainmentMuskegon = ["Rake Beer Project", "Pigeon Hill Brewing Co.", "Unruly Brewing Company", "18th Amendment Spirits Co.", "Lively Up Kombucha"];
 
-let entertainmentHolland = ["New Holland Brewing", "Our Brewing Company", "Big Lake Brewing", "Guardian Brewing Company", "Brewery 4 Two 4"];
+//let entertainmentHolland = ["New Holland Brewing", "Our Brewing Company", "Big Lake Brewing", "Guardian Brewing Company", "Brewery 4 Two 4"];
 
-let entertainmentAnnArbor = ["HOMES Brewery", "Wolverine State Brewing Co.", "Blom Meadworks", "Jolly Pumpkin Cafe & Brewery", "Grizzly Peak Brewing Co."];
+//let entertainmentAnnArbor = ["HOMES Brewery", "Wolverine State Brewing Co.", "Blom Meadworks", "Jolly Pumpkin Cafe & Brewery", "Grizzly Peak Brewing Co."];
 
-let entertainmentDetroit = ["Batch Brewing Company", "Motor City Brewing Works", "Atwater Brewery & Tap House", "Eastern Market Brewing Co.", "Brew Detroit"];
+//let entertainmentDetroit = ["Batch Brewing Company", "Motor City Brewing Works", "Atwater Brewery & Tap House", "Eastern Market Brewing Co.", "Brew Detroit"];
 //(15 points): As a user, I want to be able to randomly re-select a destination, restaurant, mode of transportation, and/or form of entertainment if I don’t like one or more of those things.
 
-let tripPicks = ["", "", "", ""]
+let tripPicks = ["", "", "", ""];
 
 function randomlySelectStringFromTripCategory(tripCategory){
     let random = Math.floor(Math.random() * tripCategory.length);
@@ -42,32 +42,70 @@ function randomlySelectStringFromTripCategory(tripCategory){
 }
 
 let choiceOne = randomlySelectStringFromTripCategory(destination);
+    tripPicks[0] = choiceOne;
 
-let choiceTwo = randomlySelectStringFromTripCategory
+    //choiceOne[0] = restaurantGrandRapids;
+    //choiceOne[1] = restaurantMuskegon;
+    //choiceOne[2] = restaurantHolland;
+    //choiceOne[3] = restaurantAnnArbor;
+    //choiceOne[4] = restauratnDetroit;  
+ 
+let choiceTwo = randomlySelectStringFromTripCategory(restaurantGrandRapids);
+
+// while (destination = false){
+//     switch(destination) {
+//         case [0]:
+//             tripPicks[1] = choiceTwo;
+//             break;
+//         case [1]:
+//             tripPicks[1] = choiceTwo;
+//             break;
+//         case [2]:
+//             tripPicks[1] = choiceTwo;
+//             break;
+//         case [3]:
+//             tripPicks[1] = choiceTwo;
+//             break;
+//         case [4]:
+//             tripPicks[1] = choiceTwo;
+//     }
+// }
+tripPicks[1] = choiceTwo;
+
+let choiceThree = randomlySelectStringFromTripCategory(transportation);
+tripPicks[2] = choiceThree;
+
+let choiceFour = randomlySelectStringFromTripCategory(entertainmentGrandRapids);
+tripPicks[3] = choiceFour; 
+
+console.log(tripPicks);
 
 let choice = false;
-while (choice = false){
+while (choice == false){
     let userInput = prompt("Enter 1 to reselect destination. Enter 2 to reselect restaurant. Enter 3 to reselect mode of transportation. Enter 4 to reselect entertainment. Enter 5 if you would like to book this trip.");
-    switch (userInput){
+    switch(userInput) {
         case "1":
-            randomlySelectStringFromTripCategory(destination);
+            tripPicks[0] = randomlySelectStringFromTripCategory(destination);
             break;
         case "2":
-            randomlySelectStringFromTripCategory(entertainment);
+            tripPicks[1] = randomlySelectStringFromTripCategory(entertainment);
             break;
         case "3":
-            randomlySelectStringFromTripCategory(transportation);
+            tripPicks[2] = randomlySelectStringFromTripCategory(transportation);
             break;
         case "4":
-            randomlySelectStringFromTripCategory(entertainment);
+            tripPicks[3] = randomlySelectStringFromTripCategory(entertainment);
             break;
         case "5":
             choice = true;
-            console.log("Congratulations, Here is the trip you selected" + tripPicks)
+            console.log("Congratulations, Here is the trip you selected!");
         default:
             alert("Invalid Entry, Try again.");
-
+    }
 }
+//let choice = true;
+
+console.log(tripPicks);
 
 // if (randomlySelectStringFromTripCategory(destination) = destination[0]){
 // let userInputDestination = confirm("Is the Destination ok?");
